@@ -1,45 +1,144 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+  font-family: Arial, sans-serif;
+  background-color: #e6d8d8;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #f0e6ff;
-  font-family: Arial, sans-serif;
   text-align: center;
+  margin: 0;
 }
 
 .container {
-  border: 2px solid #8a2be2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 20px;
   border-radius: 10px;
   background-color: #fff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+  min-height: 100;
 }
 
+/* Heading */
 h1 {
   color: #8a2be2;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
+/* Buttons Container */
 .buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  /* Allow buttons to wrap on small screens */
+}
+
+/* Button Styles */
+button {
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  color: white;
+  outline: none;
+}
+
+/* Yes Button */
+button#yesBtn {
+  background: linear-gradient(45deg, #a49a87, #6c6b56);
+}
+
+/* No Button */
+button#noBtn {
+  background: linear-gradient(45deg, #f44336, #b71c1c);
+}
+
+button#resetBtn {
+  background-color: lightgray;
+  padding: 4px 7px;
+  font-size: .9rem;
+  margin-top: 2rem;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+button:disabled {
+  background-color: #d3d3d3;
+  cursor: not-allowed;
+}
+
+/* Response Text */
+p {
+  font-size: 1.2rem;
+  color: #333;
   margin-top: 20px;
 }
 
-button {
-  padding: 10px 20px;
-  margin: 5px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
+/* Media Queries for Mobile Responsiveness */
+
+/* For screens smaller than 600px */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    /* Smaller heading for mobile */
+  }
+
+  p {
+    font-size: 1.1rem;
+    /* Smaller text for response */
+  }
+
+  button {
+    font-size: 16px;
+    padding: 12px 24px;
+    /* Smaller padding for mobile */
+  }
+
+  .buttons {
+    gap: 10px;
+    /* Smaller gap between buttons */
+  }
 }
 
-#yesButton {
-  background-color: #4CAF50;
-  color: white;
-}
+/* For very small screens (like on some phones) */
+@media (max-width: 400px) {
+  h1 {
+    font-size: 1.3rem;
+    /* Even smaller heading */
+  }
 
-#noButton {
-  background-color: #f44336;
-  color: white;
-  position: absolute;
+  p {
+    font-size: 1rem;
+    /* Smaller text for mobile */
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 20px;
+    /* Even smaller padding */
+  }
 }
